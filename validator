@@ -1,0 +1,16 @@
+#!/usr/bin/env php
+
+<?php
+require_once(dirname(__FILE__).'/ProgressionValidator.php');
+
+if( isset($argv[1]) )
+{
+  $validator = new ProgressionValidator($argv[1]);
+
+  echo 'The input string is a '.($validator->isArithmetical() ? 'valid' : 'invalid').' arithmetical progression.'.PHP_EOL;
+  echo 'The input string is a '.($validator->isGeometrical() ? 'valid' : 'invalid').' geometrical progression.'.PHP_EOL;
+}
+else
+{
+  echo 'usage:'.PHP_EOL.'validator 1,2,3,4...'.PHP_EOL.PHP_EOL;
+}
